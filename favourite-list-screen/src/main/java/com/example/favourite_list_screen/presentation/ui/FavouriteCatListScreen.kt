@@ -102,12 +102,14 @@ private fun Image(image: Image?, onFavouriteTap: () -> Unit, onDownload: (Image)
             placeholder = painterResource(R.drawable.ic_cat),
             contentScale = ContentScale.Crop,
             contentDescription = "",
-            modifier = Modifier.fillMaxSize().combinedClickable(
-                onClick = {},
-                onLongClick = {
-                    showDialog.value = true
-                }
-            )
+            modifier = Modifier
+                .fillMaxSize()
+                .combinedClickable(
+                    onClick = {},
+                    onLongClick = {
+                        showDialog.value = true
+                    }
+                )
         )
         Icon(
             modifier = Modifier
@@ -136,7 +138,8 @@ private fun DownloadAlertDialog(isShown: MutableState<Boolean>, onDownload: (Ima
                 isShown.value = false
             })
             { Text(text = "Cancel") }
-        })
+        },
+        text = {Text(text = "Скачать котика?")})
 }
 
 private fun LazyGridScope.Loading() {
