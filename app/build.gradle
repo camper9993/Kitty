@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.kitty"
-        minSdk 21
+        minSdk 23
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -95,5 +95,6 @@ dependencies {
     implementation(project(":data-source"))
     implementation(project(":cat-list-screen"))
     implementation(project(":favourite-list-screen"))
+    implementation(project(":downloader"))
 
 }

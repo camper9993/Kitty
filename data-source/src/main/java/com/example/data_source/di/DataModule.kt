@@ -32,12 +32,12 @@ abstract class DataModule {
         @Singleton
         fun provideOkHttpClient(): OkHttpClient {
             return OkHttpClient.Builder()
+                .addInterceptor(ApiKeyInterceptor())
                 .addInterceptor(
                     HttpLoggingInterceptor().apply {
-                        level = HttpLoggingInterceptor.Level.BODY
+                        level = HttpLoggingInterceptor.Level.HEADERS
                     }
                 )
-                .addInterceptor(ApiKeyInterceptor())
                 .build()
         }
 
